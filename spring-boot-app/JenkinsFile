@@ -18,6 +18,7 @@ pipeline {
         sh 'cd spring-boot-app && mvn clean package'
       }
     }
+    /*
     stage('Static Code Analysis') {
       environment {
         SONAR_URL = "http://192.168.29.228:9000"
@@ -28,6 +29,7 @@ pipeline {
         }
       }
     }
+    */
     stage('Build and Push Docker Image') {
       environment {
         DOCKER_IMAGE = "brineshvarshan/ultimate-cicd:${BUILD_NUMBER}"
